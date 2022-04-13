@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <h1
+      style={
+        Object {
+          "marginBottom": "2.5em",
+        }
+      }
+    >
+      Guess That Celebrity
+    </h1>
+    <div
+      className="MuiBox-root MuiBox-root-3"
+      style={
+        Object {
+          "top": "50%",
+        }
+      }
+    >
+      <div>
+        Enter your name:
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          Name:
+        </div>
+        <input
+          id="name"
+          name="name"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+      <input
+        className="button"
+        onClick={[Function]}
+        type="submit"
+        value="login"
+      />
+    </div>
+  </div>
+</div>
+`;

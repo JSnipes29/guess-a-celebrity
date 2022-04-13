@@ -1,0 +1,53 @@
+[
+    
+    {
+      "image": "celeb1.jpeg",
+      "answer": "Rajiv Ghandi",
+      "answers":["Sanjeev Khanna", "Rajiv Ghandi", "Swapneel Sheth", "Anindya De"]
+    },
+    
+    {
+      "image": "celeb2.jpeg",
+      "answer": "Sanjeev Khanna",
+      "answers":["Rajiv Ghandi", "Swapneel Sheth", "Sanjeev Khanna", "Anindya De"]
+    },
+    {
+      "image": "celeb3.jpeg",
+      "answer": "Eric Fouh",
+      "answers":["C.J. Taylor", "Nakia Rimmer", "Eric Fouh", "Kevin Johnson"]
+    },
+    {
+      "image": "celeb4.jpeg",
+      "answer": "C.J. Taylor",
+      "answers":["C.J. Taylor", "Eric Fouh", "Nakia Rimmer", "Kevin Johnson"]
+    },
+    {
+      "image": "celeb5.jpeg",
+      "answer": "Swapneel Sheth",
+      "answers":["Rajiv Ghandi", "Sanjeev Khana", "Anindya De", "Swapneel Sheth"]
+    },
+    {
+      "image": "celeb6.jpeg",
+      "answer": "Steve Zdancewick",
+      "answers":["Steve Zdancewick", "Sanjeev Khana", "Val Tannen", "Robert Ghrist"]
+    }, {
+      "image": "celeb7.jpeg",
+      "answer": "Val Tannen",
+      "answers":["Rajiv Ghandi", "Val Tannen", "Steve Zdancewick", "Robert Ghrist"]
+    },
+    {
+      "image": "celeb8.jpeg",
+      "answer": "Anindya De",
+      "answers":["Anindya De", "Arvind Bhusnurmath", "Swapneel Sheth", "Sanjeev Khana"]
+    }, {
+      "image": "celeb9.jpeg",
+      "answer": "Arvind Bhusnurmath",
+      "answers":["Rajiv Ghandi", "Anindya De", "Swapneel Sheth", "Arvind Bhusnurmath"]
+    }, {
+      "image": "celeb10.jpeg",
+      "answer": "Nakia Rimmer",
+      "answers":["Eric Fouh", "Nakia Rimmer", "C.J. Taylor", "Kevin Johnson"]
+    }
+    
+    
+    ]
