@@ -32,7 +32,7 @@ webapp.use(
 webapp.use(cors({ credentials: true, orgin: true }));
 
 // Tell express where to find static files
-webapp.use(express.static(path.join(__dirname, '../client/build')))
+webapp.use(express.static(path.join(__dirname, './client/build')))
 // Define all endpoints as specified in REST API
 
 // Add Player endpoint
