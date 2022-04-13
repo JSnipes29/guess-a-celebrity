@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<div>
+  Who is this celebrity?
+  <div
+    className="answer-section"
+  >
+    <div>
+      <img
+        alt=""
+        height="338"
+        width="338"
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 5,
+        "top": 5,
+      }
+    }
+  >
+    Current Score: 0
+  </div>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 5,
+        "top": 25,
+      }
+    }
+  >
+    Max User Score: 0
+  </div>
+  <div
+    style={
+      Object {
+        "position": "absolute",
+        "right": 5,
+        "top": 45,
+      }
+    }
+  >
+    Max Global Score: 50 Juju
+  </div>
+</div>
+`;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<div>
+  <div>
+    <div>
+      Scores:
+    </div>
+    <div>
+      Your Score
+    </div>
+    <h1>
+      0
+    </h1>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#FF0000",
+          "position": "absolute",
+          "right": 5,
+          "top": 5,
+        }
+      }
+      type="submit"
+    >
+      Delete Account
+    </button>
+    <br />
+    <br />
+    <div>
+      1)
+    </div>
+    <div>
+      JuJu: 50
+    </div>
+    <br />
+    <br />
+    <div>
+      2)
+    </div>
+    <div>
+      Ruthy: 25
+    </div>
+    <br />
+    <br />
+    <div>
+      3)
+    </div>
+    <div>
+      Dad: 0
+    </div>
+    <br />
+    <br />
+    <button
+      className="button"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#008080",
+          "bottom": 5,
+        }
+      }
+      type="submit"
+    >
+      Play Again
+    </button>
+  </div>
+</div>
+`;
