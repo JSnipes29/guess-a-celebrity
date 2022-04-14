@@ -3,12 +3,13 @@
 import React, { useState } from 'react';
 import '../assets/App.css';
 import Account from '../modules/Account';
+import Api from '../modules/Api';
 
 export default function LoginForm({ setScores, setUsers }) {
   const [username, setUsername] = useState({ name: '' });
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const result = Account.login(username.name);
+    const result = await Api.setup(username.name);
     if (result === -1) {
       alert('Please enter a valid name');
     } else if (result === -2) {

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const rootURL = !process.env.NODE_ENV || process.env.NODE_ENV ===  'developer' 
-  ? 'http://localhost:5002' : '';
-
+// const rootURL = !process.env.NODE_ENV || process.env.NODE_ENV ===  'developer' 
+//  ? 'http://localhost:5002' : '';
+const rootURL = 'http://localhost:5002'
 async function login(player) {
   const regex = /^[0-9a-zA-Z]+$/;
   if (!player.name) {
@@ -10,9 +10,28 @@ async function login(player) {
   }
   if (!player.name.match(regex)) {
     return -2;
-  }
+  } 
   const response = await axios.post(`${rootURL}/login`, { player: `${player.name}` });
   return response.data;
+}
+
+async function setup(player) {
+  const regex = /^[0-9a-zA-Z]+$/;
+  if (!player) {
+    return -3;
+  }
+  if (!player.match(regex)) {
+    return -2;
+  }
+  let user = await axios.get(`${rootURL}/player/${player}`);
+  if(user === null) {
+    await axios.post(`${rootURL}/login`, { player: `${player}` });
+    user = await axios.get(`${rootURL}/player/${player}`);
+  }
+  user = user.data;
+  const leaders = await axios.get(`${rootURL}/leaders`);
+  const leader = leaders.data[0];
+  return { maxScore: user.score, globalMaxScore: leader.score, globalName: leader.name };
 }
 
 async function deleteAccount(player) {
@@ -40,8 +59,8 @@ async function getQuestion(id) {
 }
 
 async function getUserMax(player) {
-  const userMax = await axios.get(`${rootURL}/userMax`, { player: `${player.name}` });
-  return userMax.data;
+  const userMax = await axios.get(`${rootURL}/player/${player}`);
+  return userMax.data.score;
 }
 
 async function updateTop(player, s) {
@@ -83,5 +102,5 @@ async function updateTop(player, s) {
 }
 
 export default {
-  login, deleteAccount, updateUserMax, getTop, getUserMax, updateTop, getQuestion,
+  login, deleteAccount, updateUserMax, getTop, getUserMax, updateTop, getQuestion, setup,
 };

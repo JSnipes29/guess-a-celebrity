@@ -34,7 +34,10 @@ export default function GamePage({ scores, user, routeChange }) {
   const [userMax, setUserMax] = useState(0);
   useEffect(() => {
     const { name } = user;
-    setUserMax(Scores.getUserMax(name));
+    async function fetch() {
+    Api.getUserMax(name).then((data) => setUserMax(data))
+    }
+    fetch();
   }, []);
   useEffect(async () => {
     console.log(currQuestion);
