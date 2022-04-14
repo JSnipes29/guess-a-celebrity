@@ -5,10 +5,7 @@ const express = require('express');
 const webapp = express();
 
 // import environment variables
-require('dotenv').config()
-
-// import database functions
-const lib = require('./dbOperations');
+require('dotenv').config();
 
 // declare database object
 let db;
@@ -18,6 +15,9 @@ const path = require('path');
 
 // import CORS
 const cors = require('cors');
+
+// import database functions
+const lib = require('./dbOperations');
 
 // MongoDB URL
 const url = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.non3f.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
@@ -32,7 +32,7 @@ webapp.use(
 webapp.use(cors({ credentials: true, orgin: true }));
 
 // Tell express where to find static files
-webapp.use(express.static(path.join(__dirname, './client/build')))
+webapp.use(express.static(path.join(__dirname, './client/build')));
 // Define all endpoints as specified in REST API
 
 // Add Player endpoint
@@ -102,7 +102,8 @@ webapp.get('/question/:id', async (req, resp) => {
 
 // Root endpoint
 webapp.get('/', (_req, res) => {
-  res.sendFile(path.join(_dirname, './client/build/index.html'))
+  // eslint-disable-next-line no-undef
+  res.sendFile(path.join(_dirname, './client/build/index.html'));
   // res.json({ message: 'Welcome to HW5 Backend' });
 });
 
