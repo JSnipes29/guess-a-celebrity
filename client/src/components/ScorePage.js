@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../assets/styles.css';
 import Account from '../modules/Account';
+import Api from '../modules/Api';
 
 export default function Score({ user, setUser, routeChange }) {
   let { state } = useLocation();
@@ -16,11 +17,16 @@ export default function Score({ user, setUser, routeChange }) {
   if (score === undefined) {
     score = 0;
   }
-  // Update the user max score
-  Account.updateUserMax(user.name, score);
-  const scores = Account.getTop();
-  const deleteAccount = (() => {
-    Account.deleteAccount(user.name);
+  // Get the top scores
+  const [scores, setScores] = useState([{ name: 'Loading', score: 'Loading'}, { name: 'Loading', score: 'Loading'}, { name: 'Loading', score: 'Loading'}]);
+  useEffect(() => {
+    async function fetch() {
+      await Api.getTop().then((data) => setScores(data));
+    }
+    fetch();
+  }, [])
+  const deleteAccount = (async() => {
+    await Api.deleteAccount(user.name);
     setUser({
       name: '',
     });
@@ -55,7 +61,7 @@ export default function Score({ user, setUser, routeChange }) {
               {`${index + 1})`}
             </div>
             <div>
-              {`${s[1]}: ${s[0]}`}
+              {`${s.name}: ${s.score}`}
             </div>
             <br />
             <br />
