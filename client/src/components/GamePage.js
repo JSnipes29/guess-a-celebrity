@@ -52,13 +52,8 @@ export default function GamePage({ scores, user, routeChange }) {
       answer: resp.answer,
       answers: resp.answers,
     })
-    /*setQuestion({
-      image: cmap.get(questions[q].image) || '',
-      answer: questions[q].answer || '',
-      answers: questions[q].answers || [],
-    });*/
   }, [currQuestion]);
-  const chooseAnswer = (selected) => {
+  async function chooseAnswer (selected) {
     let s = score;
     if (selected === question.answer) {
       setScore(score + 100);
@@ -68,9 +63,10 @@ export default function GamePage({ scores, user, routeChange }) {
       alert('You got the answer wrong!');
     }
     if (counter + 1 >= 10) {
-      // Update the top 3 scores in the local storage
-      const { name } = user;
-      Scores.updateTop(name, s);
+      const name = user.name;
+      console.log(name);
+      await Api.updateUserMax(name, s);
+      // Go to score page
       routeChange('/score', { state: { score: s } });
     }
     setCounter(counter + 1);
