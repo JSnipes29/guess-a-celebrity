@@ -12,7 +12,6 @@ import GamePage from './GamePage';
 import Score from './ScorePage';
 
 function Game({ user, scores, setUser }) {
-  console.log(scores);
   const navigate = useNavigate();
   const routeChange = (path, state) => {
     navigate(path, state);
@@ -28,7 +27,9 @@ function Game({ user, scores, setUser }) {
 }
 
 function App() {
+  // user
   const [user, setUser] = useState({ name: '' });
+  // the scores to show while playing
   const [maxScores, setScores] = useState({
     userMax: 0,
     globalMax: 0,
